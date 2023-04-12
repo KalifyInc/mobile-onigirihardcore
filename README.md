@@ -65,7 +65,7 @@ $ flutter pub get
 $ flutter run
 ```
 
-If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision!
+<!-- If you want something, wait for `yarn build` to be obeyed, and after that open a little change decision! -->
 
 # 🐛 Issues
 
