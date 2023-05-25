@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kalify_onigiri_hardcore">
+    package="com.example.OnigiriHardcore">
    <application
-        android:label="kalify_onigiri_hardcore"
+        android:label="Onigiri Hardcore"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

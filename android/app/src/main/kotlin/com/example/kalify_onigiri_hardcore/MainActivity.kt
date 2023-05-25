@@ -1,4 +1,4 @@
-package com.example.kalify_onigiri_hardcore
+package com.example.OnigiriHardcore
 
 import io.flutter.embedding.android.FlutterActivity
 
