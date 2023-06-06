@@ -38,6 +38,15 @@ dependencies:
 
   url_launcher: ^6.1.11
 
+  # animation flutter
+  easy_splash_screen: ^1.0.4
+
+  # check the internet on cellphone
+  connectivity_plus: ^4.0.1
+
+  
+  firebase_core: ^2.13.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,8 +69,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # assets:
-  #   - assets/images/
+  assets:
+    - assets/images/
 
   fonts:
     - family: Poppins
