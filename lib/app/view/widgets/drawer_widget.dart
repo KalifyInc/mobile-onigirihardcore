@@ -29,7 +29,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           DrawerItemWidget(text: 'Inicio', linkNavigation: '/home'),
           DrawerItemWidget(text: 'Notícias', linkNavigation: '/noticias'),
           DrawerItemWidget(text: "Animes & HQ'S", linkNavigation: '/animes'),
-          DrawerItemWidget(text: 'CSGO ~ HLTV News', linkNavigation: '/csgo'),
+          DrawerItemWidget(text: "Filmes", linkNavigation: '/movies'),
+          DrawerItemWidget(text: "Jogos", linkNavigation: '/games'),
           TextButton(
             onPressed: () => DrawerLinkController.launchURL(
                 'https://onigiri-hardcore.blogspot.com/'),
