@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.OnigiriHardcore">
+    package="com.kalifyinc.onigirihardcore">
    <application
         android:label="Onigiri Hardcore"
         android:name="${applicationName}"
