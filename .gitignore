@@ -46,5 +46,5 @@ app.*.map.json
 
 # firebase config
 /lib/app/config/
-/android/app
+/android/app/google-services.json
 /ios/firebase
