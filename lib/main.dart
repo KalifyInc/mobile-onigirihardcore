@@ -3,8 +3,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'app/view/pages/animes&hq_page.dart';
+import 'app/view/pages/games_page.dart';
 import 'app/view/pages/home_page.dart';
 import 'app/view/pages/intro_loading_page.dart';
+import 'app/view/pages/movies_page.dart';
 import 'app/view/pages/noticias_page.dart';
 
 void main() {
@@ -35,6 +37,8 @@ class _AppState extends State<App> {
         '/home': (context) => const HomePage(),
         '/noticias': (context) => const NoticiasPage(),
         '/animes': (context) => const AnimesAndHQsPage(),
+        '/movies': (context) => const MoviesPage(),
+        '/games': (context) => const GamesPage(),
       },
     );
   }
