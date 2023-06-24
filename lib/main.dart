@@ -1,3 +1,4 @@
+import 'package:OnigiriHardcore/app/view/pages/technologies_page.dart';
 import 'package:OnigiriHardcore/themes/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,7 @@ class _AppState extends State<App> {
         '/animes': (context) => const AnimesAndHQsPage(),
         '/movies': (context) => const MoviesPage(),
         '/games': (context) => const GamesPage(),
+        '/technologies': (context) => const TechnologiesPage()
       },
     );
   }
