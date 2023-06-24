@@ -50,9 +50,7 @@ class _AnimesAndHQsPageState extends State<AnimesAndHQsPage> {
                 }
                 if (snapshot.hasData) {
                   return FirestorePagination(
-                      query: firebaseService
-                          .query()
-                          .where('categories', isEqualTo: 'Animes'),
+                      query: firebaseService.queryAnimes(),
                       limit: 10,
                       viewType: ViewType.list,
                       onEmpty: const Center(

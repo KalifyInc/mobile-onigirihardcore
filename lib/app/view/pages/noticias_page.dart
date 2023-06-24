@@ -55,7 +55,7 @@ class _NoticiasPageState extends State<NoticiasPage> {
                       }
                       if (snapshot.hasData) {
                         return FirestorePagination(
-                            query: firebaseService.queryOrderByDate(),
+                            query: firebaseService.query(),
                             limit: 10,
                             viewType: ViewType.list,
                             onEmpty: const Center(

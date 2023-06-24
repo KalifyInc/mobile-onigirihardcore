@@ -53,9 +53,7 @@ class _GamesPageState extends State<GamesPage> {
                   }
                   if (snapshot.hasData) {
                     return FirestorePagination(
-                        query: firebaseService
-                            .query()
-                            .where('categories', isEqualTo: 'Games'),
+                        query: firebaseService.queryGames(),
                         limit: 10,
                         viewType: ViewType.list,
                         onEmpty: const Center(
