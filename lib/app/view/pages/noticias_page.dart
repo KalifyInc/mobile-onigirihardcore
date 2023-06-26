@@ -75,6 +75,9 @@ class _NoticiasPageState extends State<NoticiasPage> {
                                 title: data['title'],
                                 categories: data['categories'],
                                 date: data['lessDate'],
+                                author: data['author'],
+                                bodyPost: data['bodyPost'],
+                                detailDate: data['moreDate'],
                               );
                             });
                       } else if (!snapshot.hasData) {

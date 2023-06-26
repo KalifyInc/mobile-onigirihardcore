@@ -30,41 +30,46 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Onigiri Hardcore'), centerTitle: true),
       drawer: const DrawerWidget(),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: StreamBuilder<QuerySnapshot>(
-            stream: firebaseService.getFirstsSnapshots(),
-            builder:
-                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if (snapshot.hasError) {
-                return const ErrorPage();
-              }
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: StreamBuilder<QuerySnapshot>(
+              stream: firebaseService.getFirstsSnapshots(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasError) {
+                  return const ErrorPage();
+                }
 
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const LoadingPage();
-              }
-              if (!snapshot.hasData) {
-                return const Center(
-                  child: Text("SEM DADOS"),
-                );
-              }
-              if (snapshot.hasData) {
-                final List<DocumentSnapshot> documents = snapshot.data!.docs;
-                return ListView(
-                    children: documents
-                        .map((doc) => CardWidget(
-                              imageURL: doc['imageUrl'],
-                              title: doc['title'],
-                              categories: doc['categories'],
-                              date: doc['lessDate'],
-                            ))
-                        .toList());
-              } else if (snapshot.hasError) {
-                return const ErrorPage();
-              } else {
-                return const LoadingPage();
-              }
-            }),
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const LoadingPage();
+                }
+                if (!snapshot.hasData) {
+                  return const Center(
+                    child: Text("SEM DADOS"),
+                  );
+                }
+                if (snapshot.hasData) {
+                  final List<DocumentSnapshot> documents = snapshot.data!.docs;
+                  return ListView(
+                      children: documents
+                          .map((doc) => CardWidget(
+                                imageURL: doc['imageUrl'],
+                                title: doc['title'],
+                                categories: doc['categories'],
+                                date: doc['lessDate'],
+                                author: doc['author'],
+                                bodyPost: doc['bodyPost'],
+                                detailDate: doc['moreDate'],
+                              ))
+                          .toList());
+                } else if (snapshot.hasError) {
+                  return const ErrorPage();
+                } else {
+                  return const LoadingPage();
+                }
+              }),
+        ),
       ),
     );
   }
