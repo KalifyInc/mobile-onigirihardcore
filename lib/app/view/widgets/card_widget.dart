@@ -64,11 +64,7 @@ class _CardWidgetState extends State<CardWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    '${widget.date} - ',
-                    style: const TextStyle(fontSize: 12),
-                  ),
-                  Text(
-                    widget.author,
+                    '${widget.date}',
                     style: const TextStyle(fontSize: 12),
                   ),
                 ],
