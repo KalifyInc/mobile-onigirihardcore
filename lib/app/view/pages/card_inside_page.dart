@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-import '../widgets/subtitle_widget.dart';
-
 class CardInsidePage extends StatelessWidget {
   CardInsidePage({
     super.key,
@@ -54,6 +52,7 @@ class CardInsidePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     Markdown(
+                      physics: const BouncingScrollPhysics(),
                       data: bodyPost,
                       shrinkWrap: true,
                     ),
