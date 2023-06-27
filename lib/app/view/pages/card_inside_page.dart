@@ -43,6 +43,7 @@ class CardInsidePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text('$detailDate | $author'),
                     Text(
                       title,
                       style: const TextStyle(
@@ -57,7 +58,6 @@ class CardInsidePage extends StatelessWidget {
                       shrinkWrap: true,
                     ),
                     const SizedBox(height: 12),
-                    Text(detailDate),
                   ],
                 ),
               ),
