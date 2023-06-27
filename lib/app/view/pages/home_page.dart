@@ -62,6 +62,7 @@ class _HomePageState extends State<HomePage> {
                                 author: doc['author'],
                                 bodyPost: doc['bodyPost'],
                                 detailDate: doc['moreDate'],
+                                slug: doc['slug'],
                               ))
                           .toList());
                 } else if (snapshot.hasError) {
