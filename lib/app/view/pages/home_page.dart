@@ -1,5 +1,4 @@
 import 'package:OnigiriHardcore/app/view/pages/loading_page.dart';
-import 'package:OnigiriHardcore/app/view/widgets/card_widget.dart';
 import 'package:OnigiriHardcore/app/view/widgets/drawer_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
