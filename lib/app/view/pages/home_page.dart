@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../controller/connectivity_controller.dart';
 import '../../service/posts_service.dart';
+import '../widgets/card_home_widget.dart';
 import 'error_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   final List<DocumentSnapshot> documents = snapshot.data!.docs;
                   return ListView(
                       children: documents
-                          .map((doc) => CardWidget(
+                          .map((doc) => CardHomeWidget(
                                 imageURL: doc['imageUrl'],
                                 title: doc['title'],
                                 categories: doc['categories'],

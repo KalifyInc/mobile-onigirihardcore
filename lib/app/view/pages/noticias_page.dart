@@ -8,6 +8,7 @@ import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
 
 import '../../service/posts_service.dart';
+import '../widgets/card_home_widget.dart';
 import 'error_page.dart';
 
 class NoticiasPage extends StatefulWidget {
@@ -70,7 +71,7 @@ class _NoticiasPageState extends State<NoticiasPage> {
                             itemBuilder: (context, documentSnapshot, index) {
                               final data = documentSnapshot.data()
                                   as Map<String, dynamic>;
-                              return CardWidget(
+                              return CardHomeWidget(
                                 imageURL: data['imageUrl'],
                                 title: data['title'],
                                 categories: data['categories'],
