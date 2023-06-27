@@ -68,7 +68,7 @@ class _CardWidgetState extends State<CardWidget> {
                     style: const TextStyle(fontSize: 12),
                   ),
                   Text(
-                    widget.categories,
+                    widget.author,
                     style: const TextStyle(fontSize: 12),
                   ),
                 ],
