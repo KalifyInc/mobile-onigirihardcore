@@ -74,6 +74,7 @@ class _TechnologiesPageState extends State<TechnologiesPage> {
                             author: data['author'],
                             bodyPost: data['bodyPost'],
                             detailDate: data['moreDate'],
+                            slug: data['slug'],
                           );
                         });
                   } else if (!snapshot.hasData) {

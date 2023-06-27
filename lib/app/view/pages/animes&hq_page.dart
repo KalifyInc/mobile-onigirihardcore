@@ -74,6 +74,7 @@ class _AnimesAndHQsPageState extends State<AnimesAndHQsPage> {
                             author: data['author'],
                             bodyPost: data['bodyPost'],
                             detailDate: data['moreDate'],
+                            slug: data['slug'],
                           );
                         });
                   } else if (!snapshot.hasData) {

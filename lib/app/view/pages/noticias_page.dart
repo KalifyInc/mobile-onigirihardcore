@@ -79,6 +79,7 @@ class _NoticiasPageState extends State<NoticiasPage> {
                                 author: data['author'],
                                 bodyPost: data['bodyPost'],
                                 detailDate: data['moreDate'],
+                                slug: data['slug'],
                               );
                             });
                       } else if (!snapshot.hasData) {
