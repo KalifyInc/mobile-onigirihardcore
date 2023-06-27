@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TextTitleCardWidget extends StatefulWidget {
   TextTitleCardWidget({super.key, required this.text});
-  var text;
+  final String text;
 
   @override
   State<TextTitleCardWidget> createState() => _TextTitleCardWidgetState();

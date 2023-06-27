@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class DrawerItemWidget extends StatefulWidget {
   DrawerItemWidget(
       {super.key, required this.text, required this.linkNavigation});
-  String text;
-  String linkNavigation;
+  final String text;
+  final String linkNavigation;
 
   @override
   State<DrawerItemWidget> createState() => _DrawerItemWidgetState();
