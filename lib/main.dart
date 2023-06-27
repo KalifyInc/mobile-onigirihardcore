@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'app/view/pages/animes&hq_page.dart';
 import 'app/view/pages/games_page.dart';
 import 'app/view/pages/home_page.dart';
+import 'app/view/pages/information_app_page.dart';
 import 'app/view/pages/intro_loading_page.dart';
 import 'app/view/pages/movies_page.dart';
 import 'app/view/pages/noticias_page.dart';
@@ -40,7 +41,8 @@ class _AppState extends State<App> {
         '/animes': (context) => const AnimesAndHQsPage(),
         '/movies': (context) => const MoviesPage(),
         '/games': (context) => const GamesPage(),
-        '/technologies': (context) => const TechnologiesPage()
+        '/technologies': (context) => const TechnologiesPage(),
+        '/informationApp': (context) => const InformationAppPage(),
       },
     );
   }
