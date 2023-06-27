@@ -23,12 +23,14 @@ class _InformationAppPageState extends State<InformationAppPage> {
           // resizeToAvoidBottomInset: true,
           body: Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(32.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset('assets/images/logo-transp.jpg'),
+                    Image.network(
+                        'https://onigirihardcore.vercel.app/logotipo-white.png'),
+                    const SizedBox(height: 32),
                     const Text(
                       'Versão 1.0.0',
                       style:
@@ -36,7 +38,7 @@ class _InformationAppPageState extends State<InformationAppPage> {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      '2023 - $currentYear Kalify Inc.',
+                      '2015 - $currentYear Kalify Inc.',
                       style: const TextStyle(fontSize: 16),
                     ),
                   ],
