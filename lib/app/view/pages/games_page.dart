@@ -39,7 +39,7 @@ class _GamesPageState extends State<GamesPage> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.height,
             child: Column(children: [
-              TextTitleWidget(text: 'Jogos'),
+              TextTitleWidget(text: 'Vídeo Games'),
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
                   stream: firebaseService.getAllGamesSnapshots(),
@@ -48,7 +48,7 @@ class _GamesPageState extends State<GamesPage> {
                     if (snapshot.hasError) {
                       return const ErrorPage();
                     }
-      
+
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const LoadingPage();
                     }

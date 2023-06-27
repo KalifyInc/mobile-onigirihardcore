@@ -39,7 +39,7 @@ class _MoviesPageState extends State<MoviesPage> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.height,
             child: Column(children: [
-              TextTitleWidget(text: 'Filmes'),
+              TextTitleWidget(text: 'Filmes & Séries'),
               Expanded(
                 child: StreamBuilder<QuerySnapshot>(
                   stream: firebaseService.getAllMoviesSnapshots(),
@@ -48,7 +48,7 @@ class _MoviesPageState extends State<MoviesPage> {
                     if (snapshot.hasError) {
                       return const ErrorPage();
                     }
-      
+
                     if (snapshot.connectionState == ConnectionState.waiting) {
                       return const LoadingPage();
                     }

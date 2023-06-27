@@ -32,8 +32,8 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           DrawerItemWidget(text: 'Inicio', linkNavigation: '/home'),
           DrawerItemWidget(text: 'Notícias', linkNavigation: '/noticias'),
           DrawerItemWidget(text: "Animes & HQ'S", linkNavigation: '/animes'),
-          DrawerItemWidget(text: "Filmes", linkNavigation: '/movies'),
-          DrawerItemWidget(text: "Jogos", linkNavigation: '/games'),
+          DrawerItemWidget(text: "Filmes & Séries", linkNavigation: '/movies'),
+          DrawerItemWidget(text: "Vídeo Games", linkNavigation: '/games'),
           DrawerItemWidget(
               text: "Tecnologias", linkNavigation: '/technologies'),
           TextButton(
