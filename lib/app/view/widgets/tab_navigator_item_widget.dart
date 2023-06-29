@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../pages/animes&hq_page.dart';
 import '../pages/games_page.dart';
 import '../pages/information_app_page.dart';
-import '../pages/noticias_page.dart';
+import '../pages/home_page.dart';
 import '../pages/technologies_page.dart';
 
 class TabNavigationItem {
@@ -16,7 +16,7 @@ class TabNavigationItem {
 
   static List<TabNavigationItem> get items => [
         TabNavigationItem(
-          page: const NoticiasPage(),
+          page: const HomePage(),
           icon: const Icon(Icons.home),
         ),
         TabNavigationItem(
