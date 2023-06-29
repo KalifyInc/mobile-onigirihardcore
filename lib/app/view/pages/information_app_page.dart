@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../controller/open_link_controller.dart';
-import '../widgets/drawer_widget.dart';
 
 class InformationAppPage extends StatefulWidget {
   const InformationAppPage({super.key});
@@ -19,8 +18,6 @@ class _InformationAppPageState extends State<InformationAppPage> {
       child: Scaffold(
           appBar:
               AppBar(title: const Text('Onigiri Hardcore'), centerTitle: true),
-          drawer: const DrawerWidget(),
-          // resizeToAvoidBottomInset: true,
           body: Center(
             child: Padding(
               padding: const EdgeInsets.all(32.0),
