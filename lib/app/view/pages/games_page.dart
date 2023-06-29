@@ -33,63 +33,59 @@ class _GamesPageState extends State<GamesPage> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.height,
-            child: Column(children: [
-              TextTitleWidget(text: 'Vídeo Games'),
-              Expanded(
-                child: StreamBuilder<QuerySnapshot>(
-                  stream: firebaseService.getAllGamesSnapshots(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (snapshot.hasError) {
-                      return const ErrorPage();
-                    }
+          child: Column(children: [
+            TextTitleWidget(text: 'Vídeo Games'),
+            Expanded(
+              child: StreamBuilder<QuerySnapshot>(
+                stream: firebaseService.getAllGamesSnapshots(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.hasError) {
+                    return const ErrorPage();
+                  }
 
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return const LoadingPage();
-                    }
-                    if (snapshot.hasData) {
-                      return FirestorePagination(
-                          query: firebaseService.queryGames(),
-                          limit: 10,
-                          viewType: ViewType.list,
-                          onEmpty: const Center(
-                            child: Text('Cart is empty'),
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const LoadingPage();
+                  }
+                  if (snapshot.hasData) {
+                    return FirestorePagination(
+                        query: firebaseService.queryGames(),
+                        limit: 10,
+                        viewType: ViewType.list,
+                        onEmpty: const Center(
+                          child: Text('Cart is empty'),
+                        ),
+                        bottomLoader: const Center(
+                          child: CircularProgressIndicator(
+                            strokeWidth: 3,
+                            color: Colors.lightBlue,
                           ),
-                          bottomLoader: const Center(
-                            child: CircularProgressIndicator(
-                              strokeWidth: 3,
-                              color: Colors.lightBlue,
-                            ),
-                          ),
-                          itemBuilder: (context, documentSnapshot, index) {
-                            final data =
-                                documentSnapshot.data() as Map<String, dynamic>;
-                            return CardWidget(
-                              imageURL: data['imageUrl'],
-                              title: data['title'],
-                              categories: data['categories'],
-                              date: data['lessDate'],
-                              author: data['author'],
-                              bodyPost: data['bodyPost'],
-                              detailDate: data['moreDate'],
-                              slug: data['slug'],
-                            );
-                          });
-                    } else if (!snapshot.hasData) {
-                      return const Center(
-                        child: Text("SEM DADOS"),
-                      );
-                    } else {
-                      return const LoadingPage();
-                    }
-                  },
-                ),
+                        ),
+                        itemBuilder: (context, documentSnapshot, index) {
+                          final data =
+                              documentSnapshot.data() as Map<String, dynamic>;
+                          return CardWidget(
+                            imageURL: data['imageUrl'],
+                            title: data['title'],
+                            categories: data['categories'],
+                            date: data['lessDate'],
+                            author: data['author'],
+                            bodyPost: data['bodyPost'],
+                            detailDate: data['moreDate'],
+                            slug: data['slug'],
+                          );
+                        });
+                  } else if (!snapshot.hasData) {
+                    return const Center(
+                      child: Text("SEM DADOS"),
+                    );
+                  } else {
+                    return const LoadingPage();
+                  }
+                },
               ),
-            ]),
-          ),
+            ),
+          ]),
         ),
       ),
     );
