@@ -20,7 +20,7 @@
 
 <div align="center">
   <sub>Onigiri Hardcore. Built with 💙 by
-    <a href="https://github.com/HelenCris">Helen Cris</a> and
+    <a href="https://github.com/HelenCrisM">Helen Cris</a> and
     <a href="https://github.com/KalifyInc/mobile-onigirihardcore/graphs/contributors">
       contributors
     </a>
@@ -86,5 +86,5 @@ Check out the [contributing](./CONTRIBUTING.md) page to see the best places to f
 
 Released in 2013
 
-Made by [Helen Cris](https://github.com/HelenCris).
+Made by [Helen Cris](https://github.com/HelenCrisM).
 This project is under the [MIT license](./LICENSE).
