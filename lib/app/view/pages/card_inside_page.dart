@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown_viewer/markdown_viewer.dart';
 
 import '../../controller/open_link_controller.dart';
+import '../widgets/global_snackbar_widget.dart';
 
 class CardInsidePage extends StatelessWidget {
   CardInsidePage({
@@ -63,10 +64,16 @@ class CardInsidePage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    Markdown(
-                      physics: const BouncingScrollPhysics(),
-                      data: bodyPost,
-                      shrinkWrap: true,
+                    MarkdownViewer(
+                      bodyPost,
+                      enableTaskList: true,
+                      styleSheet: const MarkdownStyle(
+                        listItemMarkerTrailingSpace: 12,
+                        codeBlock: TextStyle(
+                          fontSize: 14,
+                          letterSpacing: -0.3,
+                        ),
+                      ),
                     ),
                     const SizedBox(height: 12),
                     TextButton.icon(
@@ -75,10 +82,10 @@ class CardInsidePage extends StatelessWidget {
                                     text:
                                         "https://onigirihardcore.com.br/$slug"))
                                 .then((_) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text(
-                                          "Link copiado na área de transferência")));
+                              GlobalSnackBarWidget.show(
+                                  context,
+                                  "Link copiado para área de transferência",
+                                  Colors.white);
                             }),
                         label: const Text(
                           'Compartilhar',
