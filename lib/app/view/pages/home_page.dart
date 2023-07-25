@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                             bodyPost: data['bodyPost'],
                             detailDate: data['moreDate'],
                             slug: data['slug'],
+                            ytid: data['ytid'],
                           );
                         });
                   } else if (!snapshot.hasData) {

@@ -14,6 +14,7 @@ class CardHomeWidget extends StatefulWidget {
     required this.author,
     required this.detailDate,
     required this.slug,
+    required this.ytid,
   });
 
   final String title;
@@ -24,6 +25,7 @@ class CardHomeWidget extends StatefulWidget {
   final String author;
   final String detailDate;
   final String slug;
+  final String ytid;
 
   @override
   State<CardHomeWidget> createState() => _CardHomeWidgetState();
@@ -56,14 +58,16 @@ class _CardHomeWidgetState extends State<CardHomeWidget> {
             context,
             MaterialPageRoute(
                 builder: (context) => CardInsidePage(
-                    imageURL: widget.imageURL,
-                    title: widget.title,
-                    date: widget.date,
-                    detailDate: widget.detailDate,
-                    categories: widget.categories,
-                    bodyPost: widget.bodyPost,
-                    author: widget.author,
-                    slug: widget.slug)),
+                      imageURL: widget.imageURL,
+                      title: widget.title,
+                      date: widget.date,
+                      detailDate: widget.detailDate,
+                      categories: widget.categories,
+                      bodyPost: widget.bodyPost,
+                      author: widget.author,
+                      slug: widget.slug,
+                      ytid: widget.ytid,
+                    )),
           );
         },
         child: Column(

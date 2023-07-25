@@ -73,6 +73,7 @@ class _MoviesPageState extends State<MoviesPage> {
                             bodyPost: data['bodyPost'],
                             detailDate: data['moreDate'],
                             slug: data['slug'],
+                            ytid: data['ytid'],
                           );
                         });
                   } else if (!snapshot.hasData) {

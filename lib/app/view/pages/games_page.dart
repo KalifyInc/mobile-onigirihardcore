@@ -73,6 +73,7 @@ class _GamesPageState extends State<GamesPage> {
                             bodyPost: data['bodyPost'],
                             detailDate: data['moreDate'],
                             slug: data['slug'],
+                            ytid: data['ytid'],
                           );
                         });
                   } else if (!snapshot.hasData) {

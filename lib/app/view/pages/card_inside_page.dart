@@ -1,3 +1,4 @@
+import 'package:OnigiriHardcore/app/view/widgets/video_player_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:markdown_viewer/markdown_viewer.dart';
@@ -17,6 +18,7 @@ class CardInsidePage extends StatelessWidget {
     required this.bodyPost,
     required this.detailDate,
     required this.slug,
+    required this.ytid,
   });
 
   final String? image;
@@ -28,8 +30,16 @@ class CardInsidePage extends StatelessWidget {
   final String bodyPost;
   final String detailDate;
   final String slug;
+  final String ytid;
 
   final controller = OpenLinkController();
+
+  Widget displayYoutubeVideo() {
+    if (ytid == "")
+      return const SizedBox();
+    else
+      return VideoPlayerWidget("https://www.youtube.com/embed/$ytid");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,22 +86,24 @@ class CardInsidePage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
+                    displayYoutubeVideo(),
+                    const SizedBox(height: 12),
                     TextButton.icon(
-                        onPressed: () async =>
-                            await Clipboard.setData(ClipboardData(
-                                    text:
-                                        "https://onigirihardcore.com.br/$slug"))
-                                .then((_) {
-                              GlobalSnackBarWidget.show(
-                                  context,
-                                  "Link copiado para área de transferência",
-                                  Colors.white);
-                            }),
-                        label: const Text(
-                          'Compartilhar',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        icon: const Icon(Icons.share)),
+                      onPressed: () async => await Clipboard.setData(
+                              ClipboardData(
+                                  text: "https://onigirihardcore.com.br/$slug"))
+                          .then((_) {
+                        GlobalSnackBarWidget.show(
+                            context,
+                            "Link copiado para área de transferência",
+                            Colors.white);
+                      }),
+                      label: const Text(
+                        'Compartilhar',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      icon: const Icon(Icons.share),
+                    ),
                   ],
                 ),
               ),

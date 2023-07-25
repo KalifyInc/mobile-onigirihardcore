@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import '../pages/card_inside_page.dart';
 
 class CardWidget extends StatefulWidget {
-  CardWidget(
-      {super.key,
-      required this.title,
-      required this.categories,
-      required this.date,
-      required this.imageURL,
-      required this.bodyPost,
-      required this.author,
-      required this.detailDate,
-      required this.slug});
+  CardWidget({
+    super.key,
+    required this.title,
+    required this.categories,
+    required this.date,
+    required this.imageURL,
+    required this.bodyPost,
+    required this.author,
+    required this.detailDate,
+    required this.slug,
+    required this.ytid,
+  });
 
   final String title;
   final String categories;
@@ -23,6 +25,7 @@ class CardWidget extends StatefulWidget {
   final String author;
   final String detailDate;
   final String slug;
+  final String ytid;
 
   @override
   State<CardWidget> createState() => _CardWidgetState();
@@ -40,14 +43,16 @@ class _CardWidgetState extends State<CardWidget> {
             context,
             MaterialPageRoute(
                 builder: (context) => CardInsidePage(
-                    imageURL: widget.imageURL,
-                    title: widget.title,
-                    date: widget.date,
-                    detailDate: widget.detailDate,
-                    categories: widget.categories,
-                    bodyPost: widget.bodyPost,
-                    author: widget.author,
-                    slug: widget.slug)),
+                      imageURL: widget.imageURL,
+                      title: widget.title,
+                      date: widget.date,
+                      detailDate: widget.detailDate,
+                      categories: widget.categories,
+                      bodyPost: widget.bodyPost,
+                      author: widget.author,
+                      slug: widget.slug,
+                      ytid: widget.ytid,
+                    )),
           );
         },
         child: Column(

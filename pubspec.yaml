@@ -35,6 +35,11 @@ dependencies:
   # markdown reader
   markdown_viewer: ^0.6.2
 
+  # youtube player
+  youtube_player_flutter: ^8.1.2
+  visibility_detector: ^0.4.0+2
+
+
   # firebase
   firebase_core: ^2.13.1
   cloud_firestore: ^4.8.1
