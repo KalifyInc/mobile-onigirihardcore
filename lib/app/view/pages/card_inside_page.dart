@@ -32,8 +32,6 @@ class CardInsidePage extends StatelessWidget {
   final String slug;
   final String ytid;
 
-  final controller = OpenLinkController();
-
   Widget displayYoutubeVideo() {
     if (ytid == "")
       return const SizedBox();
