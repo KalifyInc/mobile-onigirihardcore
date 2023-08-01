@@ -12,6 +12,7 @@ class InformationAppPage extends StatefulWidget {
 class _InformationAppPageState extends State<InformationAppPage> {
   final currentYear = DateTime.now().year;
   final controller = OpenLinkController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,6 +39,23 @@ class _InformationAppPageState extends State<InformationAppPage> {
                       '2015 - $currentYear Kalify Inc.',
                       style: const TextStyle(fontSize: 16),
                     ),
+                    const SizedBox(height: 5),
+                    TextButton(
+                        onPressed: () => controller.openLink(
+                            context: context,
+                            urlParam: 'mailto:anderson18.marlon@gmail.com'),
+                        child: const Text(
+                          'Contate-nos',
+                          style: TextStyle(fontSize: 14),
+                        )),
+                    TextButton(
+                        onPressed: () => controller.openLink(
+                            context: context,
+                            urlParam: 'https://onigirihardcore.com.br/'),
+                        child: const Text(
+                          'Site oficial',
+                          style: TextStyle(fontSize: 14),
+                        )),
                   ],
                 ),
               ),
