@@ -1,12 +1,21 @@
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class OpenLinkController {
-  openLink(urlParam) async {
+  openLink({required BuildContext context, required String urlParam}) async {
     Uri url = Uri.parse(urlParam);
     try {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     } catch (e) {
-      print('Error: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Erro: ${e.toString()}',
+            style: const TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.redAccent,
+        ),
+      );
     }
   }
 }
