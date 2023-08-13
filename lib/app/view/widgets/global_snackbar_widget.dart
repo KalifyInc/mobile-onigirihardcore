@@ -14,7 +14,7 @@ class GlobalSnackBarWidget {
         behavior: SnackBarBehavior.floating,
         content: Text(
           message,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
         ),
         backgroundColor: backgroundColor,
         duration: const Duration(seconds: 4),

@@ -1,4 +1,5 @@
 import 'package:OnigiriHardcore/app/view/widgets/video_player_widget.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:markdown_viewer/markdown_viewer.dart';
@@ -32,11 +33,14 @@ class CardInsidePage extends StatelessWidget {
   final String slug;
   final String ytid;
 
+  final controller = OpenLinkController();
+
   Widget displayYoutubeVideo() {
-    if (ytid == "")
+    if (ytid == "") {
       return const SizedBox();
-    else
+    } else {
       return VideoPlayerWidget("https://www.youtube.com/embed/$ytid");
+    }
   }
 
   @override
@@ -86,6 +90,29 @@ class CardInsidePage extends StatelessWidget {
                     const SizedBox(height: 12),
                     displayYoutubeVideo(),
                     const SizedBox(height: 12),
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          const TextSpan(
+                            text: 'Acompanhe o Onigiri Hardcore também no ',
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          TextSpan(
+                            text: 'Twitter.',
+                            style: const TextStyle(
+                                color: Colors.blue, fontSize: 14),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                controller.openLink(
+                                    context: context,
+                                    urlParam:
+                                        'https://twitter.com/OnigiriHardcore');
+                              },
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
                     TextButton.icon(
                       onPressed: () async => await Clipboard.setData(
                               ClipboardData(
@@ -94,7 +121,7 @@ class CardInsidePage extends StatelessWidget {
                         GlobalSnackBarWidget.show(
                             context,
                             "Link copiado para área de transferência",
-                            Colors.white);
+                            Colors.lightBlue);
                       }),
                       label: const Text(
                         'Compartilhar',

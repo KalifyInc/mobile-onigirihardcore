@@ -17,8 +17,7 @@ class _InformationAppPageState extends State<InformationAppPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar:
-              AppBar(title: const Text('Onigiri Hardcore'), centerTitle: true),
+          appBar: AppBar(title: const Text('Sobre'), centerTitle: true),
           body: Center(
             child: Padding(
               padding: const EdgeInsets.all(32.0),
@@ -30,7 +29,7 @@ class _InformationAppPageState extends State<InformationAppPage> {
                         'https://onigirihardcore.vercel.app/logotipo-white.png'),
                     const SizedBox(height: 32),
                     const Text(
-                      'Versão 1.0.0',
+                      'Versão 1.1.0',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
@@ -45,17 +44,18 @@ class _InformationAppPageState extends State<InformationAppPage> {
                             context: context,
                             urlParam: 'mailto:anderson18.marlon@gmail.com'),
                         child: const Text(
-                          'Contate-nos',
+                          'anderson18.marlon@gmail.com',
                           style: TextStyle(fontSize: 14),
                         )),
                     TextButton(
-                        onPressed: () => controller.openLink(
-                            context: context,
-                            urlParam: 'https://onigirihardcore.com.br/'),
-                        child: const Text(
-                          'Site oficial',
-                          style: TextStyle(fontSize: 14),
-                        )),
+                      onPressed: () => controller.openLink(
+                          context: context,
+                          urlParam: 'https://onigirihardcore.com.br/'),
+                      child: const Text(
+                        'Site oficial',
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ),
                   ],
                 ),
               ),

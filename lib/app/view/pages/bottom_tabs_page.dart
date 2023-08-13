@@ -41,17 +41,19 @@ class _BottomTabsPageState extends State<BottomTabsPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(
-              icon: Icon(Icons.auto_stories_rounded), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.local_movies), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.games), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.smart_toy), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: ''),
+            icon: Icon(Icons.home),
+            label: 'Início',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline),
+            label: 'Sobre',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.lightBlue,
         unselectedItemColor: Colors.grey,
+        iconSize: 30,
         onTap: _onItemTapped,
       ),
     );

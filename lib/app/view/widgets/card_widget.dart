@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../pages/card_inside_page.dart';
 
 class CardWidget extends StatefulWidget {
-  CardWidget({
+  const CardWidget({
     super.key,
     required this.title,
     required this.categories,
@@ -70,7 +70,7 @@ class _CardWidgetState extends State<CardWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    '${widget.date}',
+                    widget.date,
                     style: const TextStyle(fontSize: 12),
                   ),
                 ],

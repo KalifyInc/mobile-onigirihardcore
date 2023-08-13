@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../pages/card_inside_page.dart';
 
 class CardHomeWidget extends StatefulWidget {
-  CardHomeWidget({
+  const CardHomeWidget({
     super.key,
     required this.title,
     required this.categories,
@@ -42,8 +42,10 @@ class _CardHomeWidgetState extends State<CardHomeWidget> {
         return 'Vídeo Games';
       case 'Movies':
         return 'Filmes & Séries';
+      case 'Development':
+        return 'Desenvolvedor';
       default:
-        return '';
+        return categoriesParams;
     }
   }
 
